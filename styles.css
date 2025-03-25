@@ -18,36 +18,87 @@ body {
 h1 {
     background: #80808099;
     color: #003473;
-    letter-spacing: 1.2;
-    width: 100%;
+    letter-spacing: normal;
 }
 
 h2 {
     margin: 5px 200px;    
-    background: #80808099;
+    background: #4d4d4d;
     padding: 5px 5%;
+    color: #5179fc;
 }
 
-p {
-    background: #939393;
-    color: #ace3ff;
-    margin: 20px 200px;
+h3 {
+    background: #4d4d4d;
+    color: #80a6ee;
+    margin: 20px 250px;
     padding: 30px;
 }
 
-.colortags {
-    display: inline-block;
-    margin-left: 420px;
+/* Buttons container */
+.button-container {
+    background-color: #808080;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: 20%;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
-.box {
-    background-color: rgb(0, 136, 209);
+/* Button */
+.btn {
+    background-color: black;
+    color: lightblue;
+    padding: 1rem;
+    font-size: 1.5rem;
 }
 
-.boxes {
-    background-color: #a8a8a8;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid rgba(214, 0, 0, 0.8);
-    padding-left: 20px;
+/* Hover state when mouse hover over */
+.btn:hover {
+    background-color: #3855b6;
+    color: #ffffff;
+}
+
+
+/* Active State (when clicked) */
+.btn:active {
+    background-color: #001e42; /* Darker color when clicked */
+    color: white;
+    transform: scale(0.95); /* Optional: gives a pressed effect */
+}
+
+/* Active state (when clicked) */
+.btn.active {
+    background-color: #93c0f7;
+    color: #000000;
+}
+
+/* actual codeblocks containing the code sets */
+.codeBlock {
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #383838;
+    color: #ffffff;
+    width: 70%;
+    padding: .5rem;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre, code {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.codeBlock h2 {
+    margin: 0;
+    text-align: center;
 }

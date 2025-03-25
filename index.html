@@ -1,67 +1,38 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="./styles.css" type="text/css">
-  </head>
- <!--comment test-->
-  <body>
-  <h1 class="aligncenter bold">Consistency In Colors</h1>
-  <h2 class="aligncenter">Themes or similarities help</h2>
-  <p class="aligncenter">Keeping colors the same "color" but differing shades is hard, for this reason its recomended to select colors first then as one goes down the page in CSS, to add certain pre-specified color classes.</p>
-  <div>
-    <table class="colortags">
-      <thead class="box">
-        <tr>
-          <th>Tag</th>
-          <th>Full name</th>
-          <th>Description</th>
-          <th>color hex</th>
-        </tr>
-      </thead>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explaining Webcode</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">  <!-- Linking page's external CSS (not inline CSS)-->
+</head>
+<body>
 
-      <tbody class="boxes">
-        <tr>
-          <td>
-            <span class="code">&lt;background-color&gt;</span>
-          </td>
-          <td>Background Color</td>
-          <td>background-color, usually in the form of a box</td>
-          <td>hex of page background &lt;#d3d3d3&gt;</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="code">&lt;color&gt;</span>
-          </td>
-          <td>color</td>
-          <td>text color</td>
-          <td>hex of the title text &lt;#003473&gt;</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="code">rgb</span>
-          </td>
-          <td>red green blue</td>
-          <td>adjusts one color based on mix of red, green & blue</td>
-          <td>section headers of table rgb(0, 136, 209)</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="code">rgba</span>
-          </td>
-          <td>Red Green Blue Alpha</td>
-          <td>Adds Alpha (opacity/transparency) to RGB value</td>
-          <td>to be the table borders rgba(214, 0, 0, 0.8)</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="code">: colorname ;</span>
-          </td>
-          <td>example: blue;</td>
-          <td>makes the element blue or background blue</td>
-          <td>previously used blue hex #003473</td>
-        </tr>
-      </tbody>
+    <h1 class="aligncenter bold">Explaining Webcode</h1>
+    <h2 class="aligncenter">HTML5, Cascading Style Sheets, & JavaScript</h2>
+    <h3 class="aligncenter">This page is to display and show the raw underlying code of the page and what is affected and affecting it (HTML/CSS/JS)</h3>
+    
+        <!-- Button Container -->
+        <div class="button-container">
+          <button class="btn" id="button1">HTML</button>
+          <button class="btn" id="button2">CSS</button>
+          <button class="btn" id="button3">JS</button>
+      </div>
 
-  </table>
+    <!-- Displaying raw HTML, CSS, JS code -->
+  <section class="codeBlock">
+    <h2>HTML Page Code</h2>  <!-- Section for HTML -->
+    <pre><code id="htmlCode"></code></pre>  <!-- HTML content will go here -->
+  </section>
+  <section class="codeBlock">
+    <h2>CSS Page Code</h2>  <!-- Section for CSstylesheets -->
+    <pre><code id="cssCode"></code></pre>  <!-- CSstylesheets content will go here -->
+  </section>
+  <section class="codeBlock">
+    <h2>Raw JavaScript Code</h2>  <!-- Section for JavaScript -->
+    <pre><code id="jsCode"></code></pre>  <!-- JavaScript content will go here -->
+  </section>
 
-  </body>
+<script src="index.js"></script>
+</body>
 </html>
