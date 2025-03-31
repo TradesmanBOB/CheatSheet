@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
-    margin: 5px 200px;    
+    margin: 5px 200px;
     background: #4d4d4d;
     padding: 5px 5%;
     color: #5179fc;
@@ -54,35 +54,39 @@ h3 {
     font-size: 1.5rem;
 }
 
-/* Hover state when mouse hover over */
+/* Hover state for mouse */
 .btn:hover {
     background-color: #3855b6;
     color: #ffffff;
 }
 
 
-/* Active State (when clicked) */
+/* Active state (when clicked) */
 .btn:active {
     background-color: #001e42; /* Darker color when clicked */
     color: white;
     transform: scale(0.95); /* Optional: gives a pressed effect */
 }
 
-/* Active state (when clicked) */
+/* Active state (after clicked) */
 .btn.active {
     background-color: #93c0f7;
     color: #000000;
 }
 
-/* actual codeblocks containing the code sets */
+/* Codeblocks containing each unique language for this page */
+.content-main {
+    display: flex;
+    flex-direction: row;
+}
+
 .codeBlock {
-    margin: 1.5rem;
     display: flex;
     flex-direction: column;
     background-color: #383838;
     color: #ffffff;
-    width: 70%;
-    padding: .5rem;
+    width: 100%;
+    padding: 1rem;
     box-sizing: border-box;
     overflow-wrap: break-word;
     white-space: pre-wrap;
@@ -101,4 +105,21 @@ pre, code {
 .codeBlock h2 {
     margin: 0;
     text-align: center;
+}
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: #6085ff;
+    width: 30%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.side-panel h2 {
+    display: flex;
+    align-self: center;
+    margin-top: 1rem;
+    background-color: #003546;
+    width: 90%;
 }

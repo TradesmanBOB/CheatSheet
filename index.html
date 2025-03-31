@@ -4,35 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explaining Webcode</title>
-    <link rel="stylesheet" href="./styles.css" type="text/css">  <!-- Linking page's external CSS (not inline CSS)-->
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
+
 <body>
+  <h1 class="aligncenter bold">Explaining Webcode</h1>
+  <h2 class="aligncenter">HTML5, Cascading Style Sheets, & JavaScript</h2>
+  <h3 class="aligncenter">
+    This page is to display and show the raw underlying code of the page and what is affected and affecting it (HTML/CSS/JS)
+  </h3>
 
-    <h1 class="aligncenter bold">Explaining Webcode</h1>
-    <h2 class="aligncenter">HTML5, Cascading Style Sheets, & JavaScript</h2>
-    <h3 class="aligncenter">This page is to display and show the raw underlying code of the page and what is affected and affecting it (HTML/CSS/JS)</h3>
-    
-        <!-- Button Container -->
-        <div class="button-container">
-          <button class="btn" id="button1">HTML</button>
-          <button class="btn" id="button2">CSS</button>
-          <button class="btn" id="button3">JS</button>
-      </div>
+  <!-- Button Container -->
+  <div class="button-container">
+    <button class="btn" id="button1">HTML</button>
+    <button class="btn" id="button2">CSS</button>
+    <button class="btn" id="button3">JS</button>
+  </div>
 
+  <!-- Main Content Wrapper -->
+  <section class="content-main">
     <!-- Displaying raw HTML, CSS, JS code -->
-  <section class="codeBlock">
-    <h2>HTML Page Code</h2>  <!-- Section for HTML -->
-    <pre><code id="htmlCode"></code></pre>  <!-- HTML content will go here -->
-  </section>
-  <section class="codeBlock">
-    <h2>CSS Page Code</h2>  <!-- Section for CSstylesheets -->
-    <pre><code id="cssCode"></code></pre>  <!-- CSstylesheets content will go here -->
-  </section>
-  <section class="codeBlock">
-    <h2>Raw JavaScript Code</h2>  <!-- Section for JavaScript -->
-    <pre><code id="jsCode"></code></pre>  <!-- JavaScript content will go here -->
+    <div class="codeChunk">
+      <div class="codeBlock">
+        <h2>HTML Page Code</h2>  <!-- Section for HTML -->
+        <pre><code id="htmlCode"></code></pre>  <!-- HTML content will go here -->
+      </div>
+      <div class="codeBlock">
+        <h2>CSS Page Code</h2>  <!-- Section for CSS Stylesheets -->
+        <pre><code id="cssCode"></code></pre>  <!-- CSS Stylesheets content will go here -->
+      </div>
+      <div class="codeBlock">
+        <h2>Raw JavaScript Code</h2>  <!-- Section for JavaScript -->
+        <pre><code id="jsCode"></code></pre>  <!-- JavaScript content will go here -->
+      </div>
+    </div>
+
+    <!-- Side Panel Placeholder -->
+    <aside class="side-panel">
+      <h2>What Things Do:</h2>
+    </aside>
   </section>
 
-<script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
