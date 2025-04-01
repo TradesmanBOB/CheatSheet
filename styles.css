@@ -1,152 +1,205 @@
+/* Styling for root HTML Element */
 html {
-    display: block;
+    display: block; /* ensures HTML element takes full width and height of viewport (window) */
+    margin: 0; /* removes browser margin around page */
+    padding: 0; /* removes default padding */
 }
 
+/* styling for body of the page */
 body {
-    background-color: #d3d3d3;
-    font-family: Arial, sans-serif;
+    background-color: #d3d3d3;  /* light grey background for entire page */
+    font-family: Arial, sans-serif;  /* sets the font to Arial with a fallback of san-serif */
 }
 
+/* class for bold text */
 .bold {
     font-weight: 900;
 }
 
+/* class for centering text within containers */
 .aligncenter {
     text-align: center;
 }
 
+/* header section styles */
+.header-container {
+    display: flex; /* flexbox for layout */
+    flex-direction: column; /* arranges elements vertically */
+    justify-content: center; /* centers content vertically */
+    align-items: center; /* centers content horizontally */
+    gap: 2rem; /* add space between children elements */
+    padding: 2rem 4rem; /* adds padding between border and contained content */
+}   
+
+/* main title style */
 h1 {
-    background: #80808099;
-    color: #003473;
-    letter-spacing: normal;
+    background: #80808099;  /* semi-transparent grey background */
+    color: #003473; /* dark blue text color */
+    letter-spacing: normal;  /* no letter spacing */
+    font-size: 4rem;  /* large font size */
+    margin: 0;  /* removes margin */
+    width: 95%; /* takes up 95% page width */
 }
 
+/* subtitle styles */
 h2 {
-    margin: 5px auto;
-    background: #4d4d4d;
-    padding: 5px 5%;
-    color: #5179fc;
-    font-size: 2rem;
+    margin: 5px auto; /* adds margin above and below */
+    background: #4d4d4d; /* dark grey bakcground */
+    padding: 5px 5%; /* padding around the text */
+    color: #5179fc; /* blue text color */
+    font-size: 3rem; /* medium-large font size */
 }
 
+/* header container's h2 adjustments */
+.header-container h2 {
+    margin: 0; /* removes margin */
+    width: 80%; /* takes up 80% width */
+    padding: 1rem; /* padding inside element */
+}
+
+/* description style */
 h3 {
-    background: #4d4d4d;
-    color: #80a6ee;
-    margin: 20px 250px;
-    padding: 30px;
+    background: #4d4d4d; /* dark grey background */
+    color: #80a6ee; /* light blue text */
+    padding: 30px; /* padding around text */
+    font-size: 1.8rem; /* medium font size */
+    margin: 0; /* removes margin */
+    width: 70%; /* takes up 70% width */
 }
 
-.spacer-margin {
-    margin: 1rem 0;
-}
-
-/* Buttons container */
+/* Buttons container styles */
 .button-container {
-    background-color: #808080;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    width: 20%;
-    gap: 2rem;
-    display: flex;
-    justify-content: center;
+    background-color: #808080; /* light grey background */
+    align-self: center; /* centers container horizontally */
+    justify-self: center; /* centers vertically */
+    padding: 1.5rem; /* padding around buttons */
+    width: 40%; /* takes up 40% width */
+    gap: 5rem; /* adds space between buttons */
+    display: flex; /* uses flexbox for layout */
+    justify-content: center; /* centers buttons horizontally */
 }
 
-/* Button */
+/* Button styling */
 .btn {
-    background-color: black;
-    color: lightblue;
-    padding: 1rem;
-    font-size: 1.5rem;
+    background-color: black; /* black background */
+    color: lightblue; /* light blue text color */
+    padding: 1rem; /* padding inside button */
+    font-size: 2.5rem; /* large text size */
 }
 
-/* Hover state for mouse */
+/* Hover state for buttons */
 .btn:hover {
-    background-color: #3855b6;
-    color: #ffffff;
+    background-color: #3855b6; /* change to blue when hovered */
+    color: #ffffff; /* white text color */
 }
 
 
 /* Active state (when clicked) */
 .btn:active {
-    background-color: #001e42; /* Darker color when clicked */
-    color: white;
-    transform: scale(0.95); /* Optional: gives a pressed effect */
+    background-color: #001e42; /* Darker blue when clicked */
+    color: white; /* white text */
+    transform: scale(0.95); /* slightly shrinks button */
 }
 
 /* Active state (after clicked) */
 .btn.active {
-    background-color: #93c0f7;
-    color: #000000;
+    background-color: #93c0f7; /* lightblue background after click */
+    color: #000000; /* black text color */
 }
 
+/* class to hide elements */
+.hidden {
+    display: none; /* hides the element */
+}
+
+/* main content area layout */
 /* Codeblocks containing each unique language for this page */
 .content-main {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 2rem;
+    display: flex; /* uses flexbox for layout */
+    justify-content: space-between; /* spaces out elements */
+    margin: 0; /* remvoes default margin */
+    padding: 2rem; /* adds padding around section */
 }
 
+/* section containing code blocks */
 .codeChunk {
-    display: flex;
-    flex-direction: column;
-    background-color: #383838;
-    color: #ffffff;
-    width: 70%;
+    display: flex; /* uses flexbox for layout */
+    flex-direction: column; /* stack elements vertically */
+    width: 70%; /* take up 70% page width */
+    gap: 5rem; /* adds space between elements */
 }
 
+/* code block container */
 .codeBlock {
-    display: flex;
-    flex-direction: column;
-    background-color: #383838;
-    color: #ffffff;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    margin: 3rem;
+    display: flex; /* uses flexbox layout */
+    flex-direction: column; /* stacks vertically */
+    background-color: #383838; /* dark grey background */
+    color: #ffffff; /* white text color */
+    width: 100%; /* 100% width taken */
+    box-sizing: border-box; /* includes padding and borders in element size */
+    overflow-wrap: break-word; /* prevents overflow of text */
+    white-space: pre-wrap; /* ensures text wraps correctly */
+    word-wrap: break-word; /* breaks long words to fit container */
+    padding: 2rem; /* padding around code block */
 }
 
+/* pre and code elements inside the code block */
 pre, code {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    word-break: break-word;
-    max-width: 100%;
-    box-sizing: border-box;
-    font-size: 1.5rem;
+    overflow-wrap: break-word; /* prevents overflow of text */
+    word-wrap: break-word; /* breaks long words to fit container */
+    white-space: pre-wrap; /* ensures text wraps correctly */
+    word-break: break-word; /* breaks long words */
+    max-width: 100%; /* ensures it doesn't exceed container width */
+    box-sizing: border-box; /* includes padding and borders in element size */
+    font-size: 1.5rem; /* sets font size */
+
 }
 
+/* style for h2 inside code blocks */
 .codeBlock h2 {
-    margin: 0;
-    text-align: center;
+    margin: 0; /* Removes margin */
+    text-align: center; /* centers the text */
 }
 
+/* side panel styling */
 .side-panel {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    padding: 1rem;
-    background-color: #6085ff;
-    outline: 2px solid red;
-    position: sticky;
-    height: 30rem;
+    position: relative; /* normal position */
+    display: flex; /* uses flexbox for layout */
+    flex-direction: column; /* stacks elements vertically */
+    gap: 2rem; /* adds space between elements */
+    width: 30%; /* takes up 30% width */
+    height: 30rem; /* fixed height */
+    padding: 1.5rem; /* padding around panel */
+    background-color: #6085ff; /* light blue background */
+    outline: 2px solid #003473; /* dark blue borders */
 }
 
+/* sticky side panel style */
+.sticky {
+    position: fixed; /* fixes position while scrolling */
+    top: 2rem; /* 2rem (32px) from top of viewport */
+    right: 2rem; /* 2rem (32px) from right of viewport */
+    z-index: 100; /* ensures the panel stays on top */
+    width: 26%; /* takes up 26% width */
+}
+
+/* side panel header style */
 .side-panel h2 {
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    margin: 1rem auto;
-    padding: .5rem;
-    white-space: nowrap;
-
-    font: 2rem Arial, sans-serif;
-    background-color: #003546;
+    width: 100%; /* takes up 100% width */
+    text-align: center; /* centers the text */
+    box-sizing: border-box; /* Includes padding and borders in element size */
+    padding: .5rem; /* padding around the text */
+    white-space: normal; /* normal text */
+    word-wrap: break-word; /* Breaks long words to fit container */
+    overflow: break-word; /* prevents overflow hide */
+    margin: 0; /* removes margin */
+    font: 2rem Arial, sans-serif; /* font styling */
+    background-color: #003546; /* dark blue background */
 }
 
+/* side panel paragraph style */
 .side-panel p {
-    font: small-caps 2rem Arial, sans-serif;
-
+    font: 2.2rem Arial, sans-serif; /* font styling */
+    margin: 0; /* removes margin */
+    overflow: hidden; /* prevents text overflow */
 }

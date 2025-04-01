@@ -4,48 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explaining Webcode</title>
+
+    <!-- Links external CSS file for styling webpage -->
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 
 <body>
-  <h1 class="aligncenter bold">Explaining Webcode</h1>
-  <h2 class="aligncenter">HTML5, Cascading Style Sheets, & JavaScript</h2>
-  <h3 class="aligncenter">
-    This page is to display and show the raw underlying code of the page and what is affected and affecting it (HTML/CSS/JS)
-  </h3>
+  <!-- Header section: contains title, subtitle and description -->
+  <div class="header-container">
+
+     <!-- Main title of the page -->
+    <h1 class="aligncenter bold">Explaining Webcode</h1>
+
+     <!-- Subtitle of the page, listing technology covered  -->
+    <h2 class="aligncenter">HTML5 | Cascading Style Sheets (CSS) | JavaScript (JS)</h2>
+
+     <!-- description of page's purpose -->
+    <h3 class="aligncenter">
+      This page is to display and show the raw underlying code of the page and to summarize the following languages and what they are generally used for. (HTML/CSS/JS)
+    </h3>  
+  </div>
 
   <!-- Button Container -->
   <div class="button-container">
+
+    <!-- Button to toggle HTML Code visibility -->
     <button class="btn" id="button1">HTML</button>
+    
+    <!-- Button to toggle CSS Code visibility -->
     <button class="btn" id="button2">CSS</button>
+
+    <!-- Button to toggle JS Code visibility -->
     <button class="btn" id="button3">JS</button>
-  </div>
 
-  <!-- Main Content Wrapper -->
+  </div> <!-- closing div for button-container -->
+
+  <!-- Main Content displays code and summarize panel -->
   <section class="content-main">
-    <!-- Displaying raw HTML, CSS, JS code -->
+    <!-- Displaying raw code -->
     <div class="codeChunk">
+      <!-- Section for displaying HTML code -->
       <div class="codeBlock">
-        <h2>HTML Page Code</h2>  <!-- Section for HTML -->
-        <pre><code id="htmlCode"></code></pre>  <!-- HTML content will go here -->
+        <h2>HTML Page Code</h2>
+          <!-- HTML content will go here -->
+        <pre><code id="htmlCode" class="hidden"></code></pre>
       </div>
-      <div class="codeBlock spacer-margin">
-        <h2>CSS Page Code</h2>  <!-- Section for CSS Stylesheets -->
-        <pre><code id="cssCode"></code></pre>  <!-- CSS Stylesheets content will go here -->
-      </div>
+      
+        <!-- Section for displaying CSS code -->
       <div class="codeBlock">
-        <h2>Raw JavaScript Code</h2>  <!-- Section for JavaScript -->
-        <pre><code id="jsCode"></code></pre>  <!-- JavaScript content will go here -->
+        <h2>CSS Page Code</h2>
+          <!-- CSS content will go here -->
+        <pre><code id="cssCode" class="hidden"></code></pre>
       </div>
-    </div>
 
-    <!-- Side Panel Placeholder -->
+        <!-- Section for displaying JS code -->
+      <div class="codeBlock">
+        <h2>Raw JavaScript Code</h2>
+        <!-- JavaScript content will go here -->
+        <pre><code id="jsCode" class="hidden"></code></pre>
+      </div>
+    </div> <!-- Closing Div codeChunk -->
+
+    <!-- Side Panel filled in by JS -->
     <aside class="side-panel">
-      <h2>What certain elements Do/Act/Apply:</h2>
-      <p>Increase the font size of this text</p>
     </aside>
-  </section>
 
+  </section> <!-- Closing section content-main -->
+  <!-- External JavaScript file for interactivity and dynamic content -->
   <script src="index.js"></script>
 </body>
 </html>
