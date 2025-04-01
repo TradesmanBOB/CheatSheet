@@ -22,10 +22,11 @@ h1 {
 }
 
 h2 {
-    margin: 5px 200px;
+    margin: 5px auto;
     background: #4d4d4d;
     padding: 5px 5%;
     color: #5179fc;
+    font-size: 2rem;
 }
 
 h3 {
@@ -83,14 +84,15 @@ h3 {
     display: flex;
     justify-content: center;
     margin: 0;
+    padding: 2rem;
 }
 
-.codeChunck {
+.codeChunk {
     display: flex;
     flex-direction: column;
     background-color: #383838;
     color: #ffffff;
-    width: 100%;
+    width: 70%;
 }
 
 .codeBlock {
@@ -99,12 +101,11 @@ h3 {
     background-color: #383838;
     color: #ffffff;
     width: 100%;
-    margin-bottom: 1rem;
-    padding: 1rem;
     box-sizing: border-box;
     overflow-wrap: break-word;
     white-space: pre-wrap;
     word-wrap: break-word;
+    margin: 3rem;
 }
 
 pre, code {
@@ -114,6 +115,7 @@ pre, code {
     word-break: break-word;
     max-width: 100%;
     box-sizing: border-box;
+    font-size: 1.5rem;
 }
 
 .codeBlock h2 {
@@ -128,6 +130,8 @@ pre, code {
     padding: 1rem;
     background-color: #6085ff;
     outline: 2px solid red;
+    position: sticky;
+    height: 30rem;
 }
 
 .side-panel h2 {
@@ -138,5 +142,11 @@ pre, code {
     padding: .5rem;
     white-space: nowrap;
 
+    font: 2rem Arial, sans-serif;
     background-color: #003546;
+}
+
+.side-panel p {
+    font: small-caps 2rem Arial, sans-serif;
+
 }
