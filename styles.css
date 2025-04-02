@@ -9,6 +9,7 @@ html {
 body {
     background-color: #d3d3d3;  /* light grey background for entire page */
     font-family: Arial, sans-serif;  /* sets the font to Arial with a fallback of san-serif */
+    margin: 0;
 }
 
 /* class for bold text */
@@ -73,7 +74,6 @@ h3 {
     align-self: center; /* centers container horizontally */
     justify-self: center; /* centers vertically */
     padding: 1.5rem; /* padding around buttons */
-    width: 40%; /* takes up 40% width */
     gap: 5rem; /* adds space between buttons */
     display: flex; /* uses flexbox for layout */
     justify-content: center; /* centers buttons horizontally */
@@ -199,7 +199,84 @@ pre, code {
 
 /* side panel paragraph style */
 .side-panel p {
-    font: 2.2rem Arial, sans-serif; /* font styling */
+    font: 1.75rem Arial, sans-serif; /* font styling */
     margin: 0; /* removes margin */
     overflow: hidden; /* prevents text overflow */
+}
+
+/* media queries, used for scaling up or down for different screen widths (left to right) height auto applies itself */
+
+/* For screens 1440px and down */
+@media (max-width: 1440px) {
+    .sticky {
+        width: 25%;
+    }
+
+    .side-panel p {
+        font-size: 1.5;
+    }
+}
+
+/* For screens 1024px and down */
+@media (max-width: 1023px) {
+    .header-container {
+        padding: 2rem 4rem 0rem;
+    }
+
+    .header-container h1 {
+        width: 95%;
+    }
+
+    .header-container h2 {
+        max-width: 80%;
+        font-size: 2rem;
+    }
+
+    .header-container h3 {
+       max-width: 80%;
+       font-size: 1.6rem;
+    }
+
+    .side-panel h2 {
+        font-size: 1.6rem;
+    }
+
+    .side-panel p {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        gap: 2rem;
+    }
+
+    .codeChunk {
+        width: 100%;
+    }
+    
+    .side-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+    }
+
+    .sticky {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+    }
+
+    .side-panel h2 {
+        font-size: 1.8rem;
+    }
+
+    .side-panel p {
+        font-size: 1.6rem;
+        overflow-wrap: wrap;
+    }
 }
