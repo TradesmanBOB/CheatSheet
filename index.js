@@ -152,12 +152,25 @@ function updateSidePanel(section) {
 
 // Making the side-panel sticky to the top right of screen
 // set the scroll threshold (when to make panel sticky)
-const scrollThreshold = 500; // When page is scrolled 100px or more
+// initial side panel message and threshold
+let scrollThreshold = 500; // Default for desktop (500px scroll)
+// adjust scroll threshold and side panel behavior based on window size
+function adjustThreshold() {
+    if (window.innerWidth <= 768) {
+        scrollThreshold = null; // remove scroll threshold for side panel will always sticky on mobile
+    } else {
+        scrollThreshold = 500; // set scroll threshold for larger screens
+    }
+}
 
-// Add scroll event listener, makes side panel stick to viewport after scrolling past certain distance from top of page to follow that of the viewport
+// call adjustthreshold on page laod and window resize
+window.addEventListener('DOMContentLoaded', adjustThreshold);
+window.addEventListener('resize', adjustThreshold);
+
+// scroll event listener for sticky side panel
 window.addEventListener('scroll', () => {
-    if (window.scrollY >= scrollThreshold) {
-        sidePanel.classList.add('sticky');
+    if (scrollThreshold === null || window.scrollY >= scrollThreshold) {
+        sidePanel.ATTRIBUTE_NODE.classList.add('sticky');
     } else {
         sidePanel.classList.remove('sticky');
     }
