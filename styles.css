@@ -85,6 +85,7 @@ h3 {
     color: lightblue; /* light blue text color */
     padding: 1rem; /* padding inside button */
     font-size: 2.5rem; /* large text size */
+
 }
 
 /* Hover state for buttons */
@@ -235,6 +236,10 @@ pre code span.token.property {
     color: rgb(255, 197, 90);
 }
 
+pre code span.token.rule {
+    color: #9b4d96;
+}
+
 /* media queries, used for scaling up or down for different screen widths (left to right) height auto applies itself */
 
 /* For screens 1440px and down */
@@ -292,14 +297,14 @@ pre code span.token.property {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 35%;
+        height: 30%;
         padding: 0;
-        border: 1px solid red;
     }
 
     .sticky {
         position: fixed;
         bottom: 0;
+        top: auto;
         left: 0;
         z-index: 100;
         width: 100%;
@@ -324,12 +329,20 @@ pre code span.token.property {
 
     .header-container h1 {
         width: 100%;
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+
+    .header-container h2 {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        padding: .5rem;
     }
 
     .header-container h3 {
         width: 100%;
-        padding: 1.5rem;
+        padding: 1rem;
+        font-size: 1rem;
+        line-height: 1.8;
     }
 
     .button-container {
@@ -342,7 +355,8 @@ pre code span.token.property {
 
     .side-panel {
         box-sizing: border-box;
-        height: 30%;
+        height: 28%;
+        gap: 0;
     }
 
     .side-panel p {

@@ -141,8 +141,11 @@ function updateSidePanel(section) {
     // Reset the content of the side panel
     if (section === '') {
         sidePanel.innerHTML = `<h2>Please, chose a button.</h2>
-        <p>Upon selecting a button, you will see an explanation here as to what said language generally does
-         and an example of it.</p>`;
+        <p>
+        This page is scrollable. 
+        Select a button below, and you will see an explanation and example as to what each language does
+        and how they are used.
+        </p>`;
     } else {
         // Add explanation based on section selected
         let explanation = '';
