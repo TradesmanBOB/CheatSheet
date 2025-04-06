@@ -204,6 +204,37 @@ pre, code {
     overflow: hidden; /* prevents text overflow */
 }
 
+/* Prism.js styling (for styling code within the codeblock trying to match this to that of the Programming application coloring*/
+pre code span.token.comment {
+    color: #6a9955;
+}
+
+pre code span.token.doctype {
+    color: #569cd6;
+}
+
+pre code span.token.string,
+ pre code span.token.url,
+  pre code span.token.attr-value {
+    color: #D87A3C ; /* Adjust to the desired color */
+}
+
+pre code span.token.attr-name{
+    color: #4FC1FF;
+}
+
+pre code span.token.tag {
+    color: #4678A3;
+}
+
+pre code span.token.selector {
+    color: #c89e56 ;  /* Gold color */
+}
+
+pre code span.token.property {
+    color: rgb(255, 197, 90);
+}
+
 /* media queries, used for scaling up or down for different screen widths (left to right) height auto applies itself */
 
 /* For screens 1440px and down */

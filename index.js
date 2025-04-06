@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchAndDisplayFile('index.js', 'jsCode');       // JS code
 });
 
-// Function to add/remove the 'active' class on a button which in turn adjusts content on the page to open block for that language and opens summary for that language
+// Function to add/remove the 'active' class on a button which in turn adjusts content on the page
+//  to open block for that language and opens summary for that language.
 function setActiveButton(button) {
     // Select all buttons
     const buttons = document.querySelectorAll('.btn');
@@ -89,9 +90,23 @@ function fetchAndDisplayFile(filePath, codeId) {
     fetch(filePath)
         .then(response => response.text())
         .then(data => {
-            document.getElementById(codeId).textContent = data;
+
+    const codeElement = document.getElementById(codeId);
+    codeElement.textContent = data;
+
+    // Set appropriate language class
+    if (codeId === 'htmlCode') {
+        codeElement.className = 'language-html';
+    } else if (codeId === 'cssCode') {
+        codeElement.className = 'language-css';
+    } else if (codeId === 'jsCode') {
+        codeElement.className = 'language-javascript';
+    }
+
+    Prism.highlightElement(codeElement);
+
         })
-        // if error log it to (Dev Console) located in F12 menu
+        // if error log it to (Dev Console)
         .catch(error => console.error('Error fetching file:', error));
 }
 
@@ -120,11 +135,14 @@ function showJS() {
     document.getElementById('jsCode').style.display = 'block';
 }
 
-// Update the side panel based on selected button to summarize the selected language, provides default content when no button clicked
+// Update the side panel based on selected button to summarize the selected language, 
+// provides default content when no button clicked
 function updateSidePanel(section) {
     // Reset the content of the side panel
     if (section === '') {
-        sidePanel.innerHTML = '<h2>Please, chose a button.</h2> <p>Upon selecting a button, you will see an explanation here as to what said language generally does and an example of it.</p>';
+        sidePanel.innerHTML = `<h2>Please, chose a button.</h2>
+        <p>Upon selecting a button, you will see an explanation here as to what said language generally does
+         and an example of it.</p>`;
     } else {
         // Add explanation based on section selected
         let explanation = '';
@@ -132,15 +150,24 @@ function updateSidePanel(section) {
         switch (section) {
             // explanation of HTML elements
             case 'html':
-                explanation = `<h2>Explanation of HTML Elements:</h2><p>HTML (HyperText Markup Language) defines the structure of web pages. It uses elements like headings, paragraphs, and links to structure content. Think of it as the frame and foundation of a webpage.</p>`;
+                explanation = `<h2>Explanation of HTML Elements:</h2>
+                <p>HTML (HyperText Markup Language) defines the structure of web pages.
+                It uses elements like headings, paragraphs, and links to structure content.
+                Think of it as the frame and foundation of a webpage.</p>`;
                 break;
             // explanation of CSS elements
             case 'css':
-                explanation = `<h2>Explanation of CSS Elements:</h2><p>CSS (Cascading Style Sheets) controls the layout, colors, fonts, and overall appearance of a webpage. If HTML is the structure, CSS is the style and design that makes it look good. As said, if HTML is frame and foundation, CSS would be paint, appearance, and beauty.</p>`;
+                explanation = `<h2>Explanation of CSS Elements:</h2>
+                <p>CSS (Cascading Style Sheets) controls the layout, colors, fonts, and overall appearance of a webpage.
+                If HTML is the structure, CSS is the style and design that makes it look good.
+                As said, if HTML is frame and foundation, CSS would be paint, appearance, and beauty.</p>`;
                 break;
             // explanation of JS elements
             case 'js':
-                explanation = `<h2>Explanation of JavaScript Elements:</h2><p>JavaScript(JS) adds interactivity to webpages. Enabling dynamic content changes, animations, and user interactions, like the buttons above that change code blocks and my content based on clicks.</p>`;
+                explanation = `<h2>Explanation of JavaScript Elements:</h2>
+                <p>JavaScript(JS) adds interactivity to webpages.
+                Enabling dynamic content changes, animations, and user interactions,
+                like the buttons above that change code blocks and my content based on clicks.</p>`;
                 break;
             default:
                 explanation = '<h2>Upon selecting a button, you will see an explanation here.</h2>';
@@ -169,8 +196,13 @@ window.addEventListener('resize', adjustThreshold);
 
 // scroll event listener for sticky side panel
 window.addEventListener('scroll', () => {
-    if (scrollThreshold === null || window.scrollY >= scrollThreshold) {
-        sidePanel.ATTRIBUTE_NODE.classList.add('sticky');
+    if (scrollThreshold === null) {
+        // Don't apply sticky via JS on mobile
+        return;
+    }
+
+    if (window.scrollY >= scrollThreshold) {
+        sidePanel.classList.add('sticky');
     } else {
         sidePanel.classList.remove('sticky');
     }
